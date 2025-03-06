@@ -4,6 +4,7 @@ namespace Portfolio.Models
 {
     public class CoursesModel
     {
+        [Key]
         public int CourseId { get; set; }
         [Required]
         public string? Name { get; set; }
