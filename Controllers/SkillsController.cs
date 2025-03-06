@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using Portfolio.Models;
 
 namespace Portfolio.Controllers
 {
+    [Authorize]
     public class SkillsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -22,6 +24,11 @@ namespace Portfolio.Controllers
         // GET: Skills
         public async Task<IActionResult> Index()
         {
+            //Check if _context is null
+            if (_context.Courses == null)
+            {
+                return NotFound();
+            }
             return View(await _context.Skills.ToListAsync());
         }
 
@@ -29,6 +36,12 @@ namespace Portfolio.Controllers
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
+            {
+                return NotFound();
+            }
+
+            //Check if _context is null
+            if (_context.Courses == null)
             {
                 return NotFound();
             }
@@ -69,6 +82,12 @@ namespace Portfolio.Controllers
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
+            {
+                return NotFound();
+            }
+
+            //Check if _context is null
+            if (_context.Courses == null)
             {
                 return NotFound();
             }
@@ -124,6 +143,12 @@ namespace Portfolio.Controllers
                 return NotFound();
             }
 
+            //Check if _context is null
+            if (_context.Courses == null)
+            {
+                return NotFound();
+            }
+
             var skillsModel = await _context.Skills
                 .FirstOrDefaultAsync(m => m.SkillsId == id);
             if (skillsModel == null)
@@ -139,6 +164,11 @@ namespace Portfolio.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            //Check if _context is null
+            if (_context.Courses == null)
+            {
+                return NotFound();
+            }
             var skillsModel = await _context.Skills.FindAsync(id);
             if (skillsModel != null)
             {
@@ -151,6 +181,11 @@ namespace Portfolio.Controllers
 
         private bool SkillsModelExists(int id)
         {
+            //Check if _context is null
+            if (_context.Courses == null)
+            {
+                return false;
+            }
             return _context.Skills.Any(e => e.SkillsId == id);
         }
     }
