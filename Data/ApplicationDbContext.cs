@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Portfolio.Models;
 
@@ -13,4 +13,5 @@ public class ApplicationDbContext : IdentityDbContext
 
     public DbSet<CoursesModel> Courses { get; set; }
     public DbSet<SkillsModel> Skills { get; set; }
+    public DbSet<FrameworksModel> Frameworks { get; set; }
 }
