@@ -14,6 +14,6 @@ namespace Portfolio.Models
         [Url]
         public string? Syllabus { get; set; }
         [Required]
-        public int Points { get; set; }
+        public float Points { get; set; }
     }
 }

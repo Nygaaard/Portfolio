@@ -22,6 +22,11 @@ namespace Portfolio.Controllers
         // GET: Frameworks
         public async Task<IActionResult> Index()
         {
+            //Check if _context is null
+            if (_context.FrameworksModel == null)
+            {
+                return NotFound();
+            }
             return View(await _context.FrameworksModel.ToListAsync());
         }
 
@@ -33,9 +38,21 @@ namespace Portfolio.Controllers
                 return NotFound();
             }
 
+            //Check if _context is null
+            if (_context.FrameworksModel == null)
+            {
+                return NotFound();
+            }
+
             var frameworksModel = await _context.FrameworksModel
                 .FirstOrDefaultAsync(m => m.FrameworkId == id);
             if (frameworksModel == null)
+            {
+                return NotFound();
+            }
+
+            //Check if _context is null
+            if (_context.FrameworksModel == null)
             {
                 return NotFound();
             }
@@ -73,6 +90,12 @@ namespace Portfolio.Controllers
                 return NotFound();
             }
 
+            //Check if _context is null
+            if (_context.FrameworksModel == null)
+            {
+                return NotFound();
+            }
+
             var frameworksModel = await _context.FrameworksModel.FindAsync(id);
             if (frameworksModel == null)
             {
@@ -89,6 +112,12 @@ namespace Portfolio.Controllers
         public async Task<IActionResult> Edit(int id, [Bind("FrameworkId,Name,Description")] FrameworksModel frameworksModel)
         {
             if (id != frameworksModel.FrameworkId)
+            {
+                return NotFound();
+            }
+
+            //Check if _context is null
+            if (_context.FrameworksModel == null)
             {
                 return NotFound();
             }
@@ -124,6 +153,12 @@ namespace Portfolio.Controllers
                 return NotFound();
             }
 
+            //Check if _context is null
+            if (_context.FrameworksModel == null)
+            {
+                return NotFound();
+            }
+
             var frameworksModel = await _context.FrameworksModel
                 .FirstOrDefaultAsync(m => m.FrameworkId == id);
             if (frameworksModel == null)
@@ -145,12 +180,23 @@ namespace Portfolio.Controllers
                 _context.FrameworksModel.Remove(frameworksModel);
             }
 
+            //Check if _context is null
+            if (_context.FrameworksModel == null)
+            {
+                return NotFound();
+            }
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool FrameworksModelExists(int id)
         {
+            //Check if _context is null
+            if (_context.FrameworksModel == null)
+            {
+                return false;
+            }
             return _context.FrameworksModel.Any(e => e.FrameworkId == id);
         }
     }

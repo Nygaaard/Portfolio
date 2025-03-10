@@ -25,7 +25,7 @@ namespace Portfolio.Controllers
         public async Task<IActionResult> Index()
         {
             //Check if _context is null
-            if (_context.Courses == null)
+            if (_context.Skills == null)
             {
                 return NotFound();
             }
@@ -41,7 +41,7 @@ namespace Portfolio.Controllers
             }
 
             //Check if _context is null
-            if (_context.Courses == null)
+            if (_context.Skills == null)
             {
                 return NotFound();
             }
@@ -87,7 +87,7 @@ namespace Portfolio.Controllers
             }
 
             //Check if _context is null
-            if (_context.Courses == null)
+            if (_context.Skills == null)
             {
                 return NotFound();
             }
@@ -144,7 +144,7 @@ namespace Portfolio.Controllers
             }
 
             //Check if _context is null
-            if (_context.Courses == null)
+            if (_context.Skills == null)
             {
                 return NotFound();
             }
@@ -165,7 +165,7 @@ namespace Portfolio.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             //Check if _context is null
-            if (_context.Courses == null)
+            if (_context.Skills == null)
             {
                 return NotFound();
             }
@@ -182,7 +182,7 @@ namespace Portfolio.Controllers
         private bool SkillsModelExists(int id)
         {
             //Check if _context is null
-            if (_context.Courses == null)
+            if (_context.Skills == null)
             {
                 return false;
             }
