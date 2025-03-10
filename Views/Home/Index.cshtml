@@ -36,30 +36,38 @@
         <i class="fa-solid fa-download"></i>
     </a>
 </section>
-<section class="skills-section">
-    <h2>Skills</h2>
-    <div class="skills-container">
-        <div class="skill-container">
-            <h3>Språk:</h3>
-            @foreach (var item in Model.Skills)
-            {
-                <article class="skill-item">
-                    <h4>@item.Name</h4>
-                </article>
-            }
+<div class="skill-course-container">
+    <section class="skills-section">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill-container">
+                <h3>Språk:</h3>
+                @foreach (var item in Model.Skills)
+                {
+                    <article class="skill-item">
+                        <h4>@item.Name</h4>
+                    </article>
+                }
+            </div>
+            <div class="skill-container">
+                <h3>Ramverk:</h3>
+                @foreach (var item in Model.Frameworks)
+                {
+                    <article class="skill-item">
+                        <h4>@item.Name</h4>
+                        <p class="skill-text">@item.Description</p>
+                    </article>
+                }
+            </div>
         </div>
-        <div class="skill-container">
-            <h3>Ramverk:</h3>
-            @foreach (var item in Model.Frameworks)
-            {
-                <article class="skill-item">
-                    <h4>@item.Name</h4>
-                    <p class="skill-text">@item.Description</p>
-                </article>
-            }
-        </div>
-        <div class="skill-container">
-            <h3>Kurser:</h3>
-        </div>
-    </div>
-</section>
+    </section>
+    <section class="course-section">
+        <h2>Courses</h2>
+        @foreach (var item in Model.Courses)
+        {
+            <article>
+                <h4>@item.Name</h4>
+            </article>
+        }
+    </section>
+</div>

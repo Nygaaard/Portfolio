@@ -24,12 +24,14 @@ namespace Portfolio.Controllers
             // Hämta data från databasen
             var skills = _context.Skills.ToList(); // Hämta alla Skills
             var frameworks = _context.FrameworksModel.ToList(); // Hämta alla Frameworks
+            var courses = _context.Courses.ToList(); //Hämta Courses
 
             // Skapa en ViewModel som innehåller båda listorna
             var viewModel = new HomeViewModel
             {
                 Skills = skills,
-                Frameworks = frameworks
+                Frameworks = frameworks,
+                Courses = courses
             };
 
             // Skicka ViewModel till vyn

@@ -224,8 +224,15 @@ body {
 }
 
 /*SKILL SECTION*/
+.skill-course-container {
+    display: flex;
+}
 
-.skills-section h2{
+.skills-section, .course-section {
+    width: 50%;
+    border: 1px solid #fff;
+}
+.skills-section h2, .course-section h2{
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -233,7 +240,7 @@ body {
 .skills-container {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .skills-container h3 {
