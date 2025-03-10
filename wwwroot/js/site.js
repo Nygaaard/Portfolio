@@ -29,3 +29,30 @@ lightModeToggle.addEventListener('click', function () {
     }
 });
 
+// Funktion för att visa/dölja Google Translate-widgeten
+function toggleTranslateWidget() {
+    var translateElement = document.getElementById("google_translate_element");
+    if (translateElement.style.display === "none") {
+        translateElement.style.display = "block"; // Visa widgeten
+    } else {
+        translateElement.style.display = "none"; // Dölja widgeten
+    }
+}
+
+function changeLanguage() {
+    var select = document.querySelector(".goog-te-combo");
+    var langText = document.getElementById("lang-text");
+
+    if (select) {
+        if (select.value === "en") {
+            select.value = "sv"; // Byt till svenska
+            langText.innerText = "Språk"; 
+        } else {
+            select.value = "en"; // Byt till engelska
+            langText.innerText = "Language";
+        }
+        select.dispatchEvent(new Event("change")); // Aktivera översättningen
+    }
+}
+
+

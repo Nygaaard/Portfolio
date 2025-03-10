@@ -4,7 +4,7 @@
     ViewData["Title"] = "Home Page";
 }
 <section class="upper-section">
-    <div class="intro-container">
+    <div class="intro-container" id="home">
         <div class="intro">
             <h1 class="first">Hi,</h1>
             <p class="second">My Name Is</p>
@@ -21,7 +21,7 @@
 
 </section>
 
-<section class="about-section">
+<section class="about-section" id="about">
     <h2>About</h2>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nobis officia iusto veniam incidunt nemo
         dignissimos, nulla ipsa impedit dolorem distinctio ab laboriosam vel ex amet suscipit odio non asperiores,
@@ -36,7 +36,7 @@
         <i class="fa-solid fa-download"></i>
     </a>
 </section>
-<div class="skill-course-container">
+<div class="skill-course-container" id="skills" class="notranslate">
     <section class="skills-section">
         <h2>Skills</h2>
         <div class="skills-container">
@@ -74,7 +74,7 @@
         }
     </section>
 </div>
-<section class="project-section">
+<section class="project-section" id="projects">
     <h2>Projects</h2>
     <div class="projects-container">
         <div class="project-container">
@@ -85,16 +85,25 @@
                 class="project-link">Länk</a>
         </div>
         <div class="project-container">
-            <h3>Project Name</h3>
+            <h3>Hundfotografen</h3>
             <img src="images/Hundfotografen.png" alt="Hundfotografen" class="project-img">
             <p class="project-text">Webbsite built in WordPress</p>
             <a href="https://timely-strudel-a4485e.netlify.app/" target="_blank" class="project-link">Länk</a>
         </div>
         <div class="project-container">
-            <h3>Another Project</h3>
+            <h3>Street Bites</h3>
             <img src="images/Street_bites.png" alt="Another Project" class="project-img">
             <p class="project-text">Webbsite built with </p>
             <a href="https://magnificent-travesseiro-b8df50.netlify.app/" target="_blank" class="project-link">Länk</a>
         </div>
     </div>
+</section>
+<section class="contact-form-section" id="contact">
+    <h2>Contact Me</h2>
+    <form class="contact-form" action="your-backend-handler-url" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
 </section>
